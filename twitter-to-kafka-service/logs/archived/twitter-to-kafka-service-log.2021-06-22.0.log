@@ -1,0 +1,102 @@
+2021-06-22 00:03:02 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 1.8.0_261 on DESKTOP-S505COK with PID 2948 (D:\microservices-demo\twitter-to-kafka-service\target\classes started by shiva in D:\microservices-demo)
+2021-06-22 00:03:02 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2021-06-22 00:03:03 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservices.demo.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-06-22 00:03:03 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-06-22 00:03:03 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication required a bean of type 'com.microservices.demo.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.microservices.demo.twitter.to.kafka.service.runner.impl.TwitterKafkaStreamRunner' in your configuration.
+
+2021-06-22 00:05:56 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 1.8.0_261 on DESKTOP-S505COK with PID 21408 (D:\microservices-demo\twitter-to-kafka-service\target\classes started by shiva in D:\microservices-demo)
+2021-06-22 00:05:56 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2021-06-22 00:05:56 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.134 seconds (JVM running for 1.788)
+2021-06-22 00:05:57 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - service init
+2021-06-22 00:05:57 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Spring, Microservices, Kafka, Elasticsearch]
+2021-06-22 00:05:57 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - null
+2021-06-22 00:05:57 [main] INFO  c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - starting mock twitter streams
+2021-06-22 00:05:57 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:06:07 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:06:17 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:06:27 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:06:37 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:06:47 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:06:57 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:07:07 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:07:17 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:07:27 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:07:37 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:07:47 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:07:57 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:08:07 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:08:17 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:08:27 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:08:37 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:08:47 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:08:57 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:09:07 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:09:17 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:09:27 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:09:37 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:09:47 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:09:57 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:10:07 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:10:17 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:10:27 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:10:37 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:10:47 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:10:57 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:11:07 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:11:17 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:11:27 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:11:37 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:11:47 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:11:57 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:12:30 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 1.8.0_261 on DESKTOP-S505COK with PID 704 (D:\microservices-demo\twitter-to-kafka-service\target\classes started by shiva in D:\microservices-demo)
+2021-06-22 00:12:30 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2021-06-22 00:12:31 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.147 seconds (JVM running for 1.777)
+2021-06-22 00:12:31 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - service init
+2021-06-22 00:12:31 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Spring, Microservices, Kafka, Elasticsearch]
+2021-06-22 00:12:31 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - null
+2021-06-22 00:12:31 [main] INFO  c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - starting mock twitter streams for keywords [Java, Spring, Microservices, Kafka, Elasticsearch]
+2021-06-22 00:12:31 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:12:41 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:12:51 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:13:01 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:13:11 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:13:21 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:13:31 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:13:41 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:13:51 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:14:01 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status 
+2021-06-22 00:14:18 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 1.8.0_261 on DESKTOP-S505COK with PID 19036 (D:\microservices-demo\twitter-to-kafka-service\target\classes started by shiva in D:\microservices-demo)
+2021-06-22 00:14:18 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2021-06-22 00:14:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.187 seconds (JVM running for 1.801)
+2021-06-22 00:14:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - service init
+2021-06-22 00:14:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Spring, Microservices, Kafka, Elasticsearch]
+2021-06-22 00:14:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - null
+2021-06-22 00:14:19 [main] INFO  c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - starting mock twitter streams for keywords [Java, Spring, Microservices, Kafka, Elasticsearch]
+2021-06-22 00:14:19 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ut adipiscing eiusmod consectetur adipiscing amet labore Lorem Elasticsearch do aliqua consectetur ipsum incididunt dolor ut
+2021-06-22 00:14:29 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text aliqua et Lorem aliqua labore labore dolor Spring do adipiscing magna incididunt aliqua consectetur
+2021-06-22 00:14:39 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text amet ipsum sit consectetur dolor sit Spring elit do elit et
+2021-06-22 00:14:49 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text sit dolore magna elit dolore Elasticsearch dolor dolore tempor
+2021-06-22 00:14:59 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ipsum dolor dolore adipiscing sit et elit ut Kafka amet sed sit dolore Lorem elit
+2021-06-22 00:15:20 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 1.8.0_261 on DESKTOP-S505COK with PID 15504 (D:\microservices-demo\twitter-to-kafka-service\target\classes started by shiva in D:\microservices-demo)
+2021-06-22 00:15:20 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2021-06-22 00:15:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.153 seconds (JVM running for 1.791)
+2021-06-22 00:15:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - service init
+2021-06-22 00:15:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Spring, Microservices, Kafka, Elasticsearch]
+2021-06-22 00:15:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - welcome message
+2021-06-22 00:15:21 [main] INFO  c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - starting mock twitter streams for keywords [Java, Spring, Microservices, Kafka, Elasticsearch]
+2021-06-22 00:15:21 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text do tempor sit dolore Spring labore elit
