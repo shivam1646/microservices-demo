@@ -8,10 +8,14 @@ spring:
           uri: https://github.com/shivam1646/spring-cloud-config-server-repository
           default-label: main
           username: shivam1646
-          password: *
+          password: ENC(G9Z4e9ochKHTcRjBtHdYvEq9GHxgy1/reEjRvCxDnTZqeig1GnLqO//G0L0PZIt+)
           clone-on-start: true
     fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: springCloud_Pwd!
+      password: ENC(+YEb9mHHuLYBm95tLPTmUBzUI8w8N2CnyZiAP3XlzsnmYzzLdwyYtsZW9zB9PJ2rA3AD0z9ji2H0Oz8lST7JwA==)
+
+jasypt:
+  encryptor:
+    password: Demo_Pwd!2021
