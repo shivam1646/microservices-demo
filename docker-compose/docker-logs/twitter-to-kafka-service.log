@@ -1,9 +1,13 @@
-2021-06-25 16:41:28 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 1.8.0_292 on 716cceadce25 with PID 1 (/workspace/BOOT-INF/classes started by cnb in /workspace)
-2021-06-25 16:41:28 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
-2021-06-25 16:41:30 [main] INFO  c.m.d.k.p.config.KafkaProducerConfig - props...schema.registry.url
-2021-06-25 16:41:30 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+2021-06-26 16:46:18 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://config-server:8888
+2021-06-26 16:46:21 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=058682f25f520431ddd346b0fe020f90e340e807, state=null
+2021-06-26 16:46:21 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/shivam1646/spring-cloud-config-server-repository/config-client-twitter_to_kafka.yml'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/shivam1646/spring-cloud-config-server-repository/config-client.yml'}]
+2021-06-26 16:46:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following profiles are active: twitter_to_kafka
+2021-06-26 16:46:22 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=8d733125-f015-3148-921a-c718f2872370
+2021-06-26 16:46:22 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$309212eb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-06-26 16:46:22 [main] INFO  c.m.d.k.p.config.KafkaProducerConfig - props...schema.registry.url
+2021-06-26 16:46:22 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
 	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
-	client.dns.lookup = use_all_dns_ips
+	client.dns.lookup = default
 	client.id = 
 	connections.max.idle.ms = 300000
 	default.api.timeout.ms = 60000
@@ -35,16 +39,11 @@
 	security.protocol = PLAINTEXT
 	security.providers = null
 	send.buffer.bytes = 131072
-	socket.connection.setup.timeout.max.ms = 127000
-	socket.connection.setup.timeout.ms = 10000
 	ssl.cipher.suites = null
 	ssl.enabled.protocols = [TLSv1.2]
 	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
 	ssl.key.password = null
 	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
 	ssl.keystore.location = null
 	ssl.keystore.password = null
 	ssl.keystore.type = JKS
@@ -52,240 +51,71 @@
 	ssl.provider = null
 	ssl.secure.random.implementation = null
 	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
 	ssl.truststore.location = null
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2021-06-25 16:41:31 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
-2021-06-25 16:41:31 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
-2021-06-25 16:41:31 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1624639291090
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:32 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:32 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:32 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:32 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
-2021-06-25 16:41:32 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 5.484 seconds (JVM running for 6.438)
-2021-06-25 16:41:33 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:33 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
-2021-06-25 16:41:33 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:33 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
-2021-06-25 16:41:33 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
-2021-06-25 16:41:33 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
-2021-06-25 16:41:33 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:33 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:33 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:34 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:34 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:34 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:35 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:35 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:36 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:36 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:36 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:37 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.6:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:37 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.5:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:37 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.4:9092) could not be established. Broker may not be available.
-2021-06-25 16:41:46 [main] INFO  c.m.d.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
-2021-06-25 16:41:46 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterKafkaStreamRunner - Started filtering twitter streams with configured keywords
-2021-06-25 16:41:46 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
-2021-06-25 16:41:49 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Connection established.
-2021-06-25 16:41:49 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Receiving status stream.
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text The VP has the substance of fog on a spring morning... sending to kafka topic twitter-topic
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 15037964, "id": 1408465441752813579, "text": "The VP has the substance of fog on a spring morning...", "createdAt": 1624639303000}' to topic='twitter-topic'
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
-	acks = -1
-	batch.size = 1638400
-	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
-	buffer.memory = 33554432
-	client.dns.lookup = use_all_dns_ips
-	client.id = producer-1
-	compression.type = snappy
-	connections.max.idle.ms = 540000
-	delivery.timeout.ms = 120000
-	enable.idempotence = false
-	interceptor.classes = []
-	internal.auto.downgrade.txn.commit = true
-	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
-	linger.ms = 5
-	max.block.ms = 60000
-	max.in.flight.requests.per.connection = 5
-	max.request.size = 1048576
-	metadata.max.age.ms = 300000
-	metadata.max.idle.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
-	receive.buffer.bytes = 32768
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 60000
-	retries = 5
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.mechanism = GSSAPI
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	socket.connection.setup.timeout.max.ms = 127000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.2
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	transaction.timeout.ms = 60000
-	transactional.id = null
-	value.serializer = class io.confluent.kafka.serializers.KafkaAvroSerializer
+2021-06-26 16:46:23 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.5.1
+2021-06-26 16:46:23 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2021-06-26 16:46:23 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1624725983116
+2021-06-26 16:46:23 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
 
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
-	auto.register.schemas = true
-	avro.reflection.allow.null = false
-	avro.remove.java.properties = false
-	avro.use.logical.type.converters = false
-	basic.auth.credentials.source = URL
-	basic.auth.user.info = [hidden]
-	bearer.auth.credentials.source = STATIC_TOKEN
-	bearer.auth.token = [hidden]
-	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
-	latest.compatibility.strict = true
-	max.schemas.per.subject = 1000
-	proxy.host = 
-	proxy.port = -1
-	schema.reflection = false
-	schema.registry.basic.auth.user.info = [hidden]
-	schema.registry.ssl.cipher.suites = null
-	schema.registry.ssl.enabled.protocols = [TLSv1.2]
-	schema.registry.ssl.endpoint.identification.algorithm = https
-	schema.registry.ssl.engine.factory.class = null
-	schema.registry.ssl.key.password = null
-	schema.registry.ssl.keymanager.algorithm = SunX509
-	schema.registry.ssl.keystore.certificate.chain = null
-	schema.registry.ssl.keystore.key = null
-	schema.registry.ssl.keystore.location = null
-	schema.registry.ssl.keystore.password = null
-	schema.registry.ssl.keystore.type = JKS
-	schema.registry.ssl.protocol = TLSv1.2
-	schema.registry.ssl.provider = null
-	schema.registry.ssl.secure.random.implementation = null
-	schema.registry.ssl.trustmanager.algorithm = PKIX
-	schema.registry.ssl.truststore.certificates = null
-	schema.registry.ssl.truststore.location = null
-	schema.registry.ssl.truststore.password = null
-	schema.registry.ssl.truststore.type = JKS
-	schema.registry.url = [http://schema-registry:8081]
-	use.latest.version = false
-	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+Using generated security password: 2b44ccee-9a94-40c6-ae5f-dcd8d8cb3afb
 
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 2.7.1
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 61dbce85d0d41457
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1624639310203
-2021-06-25 16:41:50 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: _RRNyDWNTn2Hb98ddLF_rQ
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @SamTheCarpetMan: Page 11. ?
+2021-06-26 16:46:24 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port(s): 8080
+2021-06-26 16:46:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 7.845 seconds (JVM running for 8.656)
+2021-06-26 16:46:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2021-06-26 16:46:24 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2021-06-26 16:46:24 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2021-06-26 16:46:24 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2021-06-26 16:46:25 [main] INFO  c.m.d.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
+2021-06-26 16:46:26 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterKafkaStreamRunner - Started filtering twitter streams with configured keywords
+2021-06-26 16:46:26 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2021-06-26 16:46:28 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - 401:Authentication credentials (https://dev.twitter.com/pages/auth) were missing or incorrect. Ensure that you have set valid consumer key/secret, access token/secret, and the system clock is in sync.
+<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
 
-#Klever #Exchange is built on top of an innovative Microservices Architecture where each component of the? sending to kafka topic twitter-topic
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1370483739516624904, "id": 1408465442394497024, "text": "RT @SamTheCarpetMan: Page 11. ?\n\n#Klever #Exchange is built on top of an innovative Microservices Architecture where each component of the\u2026", "createdAt": 1624639304000}' to topic='twitter-topic'
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @cdiddy513 He has every right. It?s still very long lol he?s missed Spring already. Plus, the #1 ESPN recruit not only signed but played in the spring game. JTT?s recruiting process has been unique to say the least. sending to kafka topic twitter-topic
-2021-06-25 16:41:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 238416494, "id": 1408465443757740032, "text": "@cdiddy513 He has every right. It\u2019s still very long lol he\u2019s missed Spring already. Plus, the #1 ESPN recruit not only signed but played in the spring game. JTT\u2019s recruiting process has been unique to say the least.", "createdAt": 1624639304000}' to topic='twitter-topic'
-2021-06-25 16:41:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Ight so boom this shit trash https://t.co/27qGYuXIre sending to kafka topic twitter-topic
-2021-06-25 16:41:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3985772049, "id": 1408465449495449608, "text": "Ight so boom this shit trash https://t.co/27qGYuXIre", "createdAt": 1624639305000}' to topic='twitter-topic'
-2021-06-25 16:41:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @KevyKevyG: Our spring summer 2021 ?Gina? collection is out now 
-#matthancock https://t.co/lbCO7Wryr9 sending to kafka topic twitter-topic
-2021-06-25 16:41:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 259694762, "id": 1408465451982766086, "text": "RT @KevyKevyG: Our spring summer 2021 \u201CGina\u201D collection is out now \n#matthancock https://t.co/lbCO7Wryr9", "createdAt": 1624639306000}' to topic='twitter-topic'
-2021-06-25 16:41:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Instagram Style: Elizabeth Olsen in @McQueen Spring 2021 @le_silla pumps on The Late Show with James Corden https://t.co/fUKPdptn8T sending to kafka topic twitter-topic
-2021-06-25 16:41:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 237958347, "id": 1408465452049829890, "text": "Instagram Style: Elizabeth Olsen in @McQueen Spring 2021 @le_silla pumps on The Late Show with James Corden https://t.co/fUKPdptn8T", "createdAt": 1624639306000}' to topic='twitter-topic'
-2021-06-25 16:41:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @killerzivhu1 Java sending to kafka topic twitter-topic
-2021-06-25 16:41:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1346474529732792321, "id": 1408465457246617603, "text": "@killerzivhu1 Java", "createdAt": 1624639307000}' to topic='twitter-topic'
-2021-06-25 16:41:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @ArnanTharpa: Protesters from Mandalay?s Pyigyitakun night strike led by a monk, prayed for the emergence of a federal union and immedia? sending to kafka topic twitter-topic
-2021-06-25 16:41:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1145962788893814784, "id": 1408465460635475974, "text": "RT @ArnanTharpa: Protesters from Mandalay\u2019s Pyigyitakun night strike led by a monk, prayed for the emergence of a federal union and immedia\u2026", "createdAt": 1624639308000}' to topic='twitter-topic'
-2021-06-25 16:41:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Protesters from Mandalay?s Pyigyitakun night strike led by a monk, prayed for the emergence of a federal union and immediate release of all detainees and for the martyrs during spring revolution tonight. #WhatsHappeningInMyanmar #June25Coup https://t.co/QWsrxDcRer sending to kafka topic twitter-topic
-2021-06-25 16:41:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1382557309335859201, "id": 1408465461067481088, "text": "Protesters from Mandalay\u2019s Pyigyitakun night strike led by a monk, prayed for the emergence of a federal union and immediate release of all detainees and for the martyrs during spring revolution tonight. #WhatsHappeningInMyanmar #June25Coup https://t.co/QWsrxDcRer", "createdAt": 1624639308000}' to topic='twitter-topic'
-2021-06-25 16:41:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @lobs: Kafka en Catalogne : pris dans un imbroglio juridique, un grand ?conomiste est menac? de ruine https://t.co/D38H6obnxx https://t.? sending to kafka topic twitter-topic
-2021-06-25 16:41:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 947851068616134657, "id": 1408465461705125890, "text": "RT @lobs: Kafka en Catalogne : pris dans un imbroglio juridique, un grand ?conomiste est menac? de ruine https://t.co/D38H6obnxx https://t.\u2026", "createdAt": 1624639308000}' to topic='twitter-topic'
-2021-06-25 16:41:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @RALee85: Map from Kommersant of yesterday's incident. The orange spots are the areas Russia temporarily closed from April 24-October 31? sending to kafka topic twitter-topic
-2021-06-25 16:41:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1264893848, "id": 1408465465060610048, "text": "RT @RALee85: Map from Kommersant of yesterday's incident. The orange spots are the areas Russia temporarily closed from April 24-October 31\u2026", "createdAt": 1624639309000}' to topic='twitter-topic'
-2021-06-25 16:41:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @diorangxl: Dior Spring 2022 Menswear Designed by Kim Jones with Travis Scott https://t.co/B57ISClRk0 sending to kafka topic twitter-topic
-2021-06-25 16:41:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1140439559509086208, "id": 1408465470966177794, "text": "RT @diorangxl: Dior Spring 2022 Menswear Designed by Kim Jones with Travis Scott https://t.co/B57ISClRk0", "createdAt": 1624639310000}' to topic='twitter-topic'
-2021-06-25 16:41:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @snorlax_support: I'm upping the ante. 1 item from the merch store or a 1 month subscription to https://t.co/yyv0lukeze. RT this or the? sending to kafka topic twitter-topic
-2021-06-25 16:41:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 21410658, "id": 1408465471419060229, "text": "RT @snorlax_support: I'm upping the ante. 1 item from the merch store or a 1 month subscription to https://t.co/yyv0lukeze. RT this or the\u2026", "createdAt": 1624639311000}' to topic='twitter-topic'
-2021-06-25 16:41:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @yangsvaen grabe naman, si vie mukhang spring ikaw mukhang thunder paano na cassvie??? sending to kafka topic twitter-topic
-2021-06-25 16:41:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 924990087963713538, "id": 1408465471930728448, "text": "@yangsvaen grabe naman, si vie mukhang spring ikaw mukhang thunder paano na cassvie???", "createdAt": 1624639311000}' to topic='twitter-topic'
-2021-06-25 16:41:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Protesters from Mandalay?s Pyigyitakun night strike led by a monk, prayed for the emergence of a federal union and immediate release of all detainees and for the martyrs during spring revolution tonight. #WhatsHappeningInMyanmar #June25Coup https://t.co/GZcsYgmJyS sending to kafka topic twitter-topic
-2021-06-25 16:41:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1357220079243460608, "id": 1408465473474236416, "text": "Protesters from Mandalay\u2019s Pyigyitakun night strike led by a monk, prayed for the emergence of a federal union and immediate release of all detainees and for the martyrs during spring revolution tonight. #WhatsHappeningInMyanmar #June25Coup https://t.co/GZcsYgmJyS", "createdAt": 1624639311000}' to topic='twitter-topic'
-2021-06-25 16:41:58 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @ichiiholic: fhs ib au designs !! basically ,, freddy gets trapped in a spooky art gallery !!
+2021-06-26 16:46:28 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Waiting for 10000 milliseconds
+2021-06-26 16:46:38 [Twitter Stream consumer /  [1][Waiting for 10000 milliseconds]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2021-06-26 16:46:39 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - 401:Authentication credentials (https://dev.twitter.com/pages/auth) were missing or incorrect. Ensure that you have set valid consumer key/secret, access token/secret, and the system clock is in sync.
+<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
 
-AND SPRING PHONE DOODLE !! bc i needed a? sending to kafka topic twitter-topic
-2021-06-25 16:41:58 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1140323043207766016, "id": 1408465476418781192, "text": "RT @ichiiholic: fhs ib au designs !! basically ,, freddy gets trapped in a spooky art gallery !!\n\nAND SPRING PHONE DOODLE !! bc i needed a\u2026", "createdAt": 1624639312000}' to topic='twitter-topic'
-2021-06-25 16:41:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @diorangxl: Dior Spring 2022 Menswear https://t.co/WlMdEcqM5o sending to kafka topic twitter-topic
-2021-06-25 16:41:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1140439559509086208, "id": 1408465481602830336, "text": "RT @diorangxl: Dior Spring 2022 Menswear https://t.co/WlMdEcqM5o", "createdAt": 1624639313000}' to topic='twitter-topic'
-2021-06-25 16:41:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @fawnskip: Ok, nervous about this, (wasn't expecting so many not-my-mom people to be interested lol) but here's the shirts shop for now.? sending to kafka topic twitter-topic
-2021-06-25 16:41:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1260100898174439424, "id": 1408465482928230401, "text": "RT @fawnskip: Ok, nervous about this, (wasn't expecting so many not-my-mom people to be interested lol) but here's the shirts shop for now.\u2026", "createdAt": 1624639313000}' to topic='twitter-topic'
-2021-06-25 16:42:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Tomorrow, June 26: NOPE and Silver Spring Progressive Action have a crew of 40+ folks meeting up at the rally. Sign up at  https://t.co/GcWGSdwpvM to meet up with us at noon. https://t.co/cPtpCPTT5D? sending to kafka topic twitter-topic
-2021-06-25 16:42:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 808415701341966336, "id": 1408465489060302860, "text": "Tomorrow, June 26: NOPE and Silver Spring Progressive Action have a crew of 40+ folks meeting up at the rally. Sign up at  https://t.co/GcWGSdwpvM to meet up with us at noon. https://t.co/cPtpCPTT5D\u2026", "createdAt": 1624639315000}' to topic='twitter-topic'
-2021-06-25 16:42:02 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ?Mirka! La linda esposa de nuestro esposo.?? ?Que guapa! ? sending to kafka topic twitter-topic
-2021-06-25 16:42:02 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3109247666, "id": 1408465492843565056, "text": "?Mirka! La linda esposa de nuestro esposo.?? ?Que guapa! ?", "createdAt": 1624639316000}' to topic='twitter-topic'
-2021-06-25 16:42:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text I at least know that:
+2021-06-26 16:46:39 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Waiting for 20000 milliseconds
+2021-06-26 16:46:59 [Twitter Stream consumer /  [1][Waiting for 20000 milliseconds]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2021-06-26 16:47:00 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - 401:Authentication credentials (https://dev.twitter.com/pages/auth) were missing or incorrect. Ensure that you have set valid consumer key/secret, access token/secret, and the system clock is in sync.
+<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
 
-They started dating in spring
+2021-06-26 16:47:00 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Waiting for 40000 milliseconds
+2021-06-26 16:47:39 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node 3 (kafka-broker-3/172.21.0.6:9092) could not be established. Broker may not be available.
+2021-06-26 16:47:40 [Twitter Stream consumer /  [1][Waiting for 40000 milliseconds]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2021-06-26 16:47:41 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - 401:Authentication credentials (https://dev.twitter.com/pages/auth) were missing or incorrect. Ensure that you have set valid consumer key/secret, access token/secret, and the system clock is in sync.
+<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<title>Error 401 Unauthorized</title>
+</head>
+<body>
+<h2>HTTP ERROR: 401</h2>
+<p>Problem accessing '/1.1/statuses/filter.json'. Reason:
+<pre>    Unauthorized</pre>
+</body>
+</html>
 
-The marathon was at like... maybe the end of summer sending to kafka topic twitter-topic
-2021-06-25 16:42:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 31358523, "id": 1408465499353190403, "text": "I at least know that:\n\nThey started dating in spring\n\nThe marathon was at like... maybe the end of summer", "createdAt": 1624639317000}' to topic='twitter-topic'
-2021-06-25 16:42:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Protesters from Mandalay?s Pyigyitakun night strike led by a monk, prayed for the emergence of a federal union and immediate release of all detainees and for the martyrs during spring revolution tonight. #WhatsHappeningInMyanmar #June25Coup https://t.co/OtgxjoXcFa sending to kafka topic twitter-topic
-2021-06-25 16:42:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1142769631788011520, "id": 1408465500753960960, "text": "Protesters from Mandalay\u2019s Pyigyitakun night strike led by a monk, prayed for the emergence of a federal union and immediate release of all detainees and for the martyrs during spring revolution tonight. #WhatsHappeningInMyanmar #June25Coup https://t.co/OtgxjoXcFa", "createdAt": 1624639318000}' to topic='twitter-topic'
-2021-06-25 16:42:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text #WhatsHappeninglnMyanmar 
-#June25Coup sending to kafka topic twitter-topic
-2021-06-25 16:42:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1405773407438864388, "id": 1408465504721801216, "text": "#WhatsHappeninglnMyanmar \n#June25Coup", "createdAt": 1624639319000}' to topic='twitter-topic'
-2021-06-25 16:42:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text #June25Coup #WhatsHappeningInMyanmar #MilkTeaAlliance?? sending to kafka topic twitter-topic
-2021-06-25 16:42:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1149848384703852545, "id": 1408465506718281731, "text": "#June25Coup #WhatsHappeningInMyanmar #MilkTeaAlliance??", "createdAt": 1624639319000}' to topic='twitter-topic'
-2021-06-25 16:42:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @wikivictorian: Ring gun, 1870s. 7-shot, brown-finished cylinder revolver with fold-down trigger and outer spring band. Crafted in Germa? sending to kafka topic twitter-topic
-2021-06-25 16:42:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 898822928313307140, "id": 1408465510191206407, "text": "RT @wikivictorian: Ring gun, 1870s. 7-shot, brown-finished cylinder revolver with fold-down trigger and outer spring band. Crafted in Germa\u2026", "createdAt": 1624639320000}' to topic='twitter-topic'
-2021-06-25 16:42:06 [Twitter Stream consumer /  [1][Receiving stream]] INFO  twitter4j.TwitterStreamImpl - Task twitter4j.StatusStreamBase$1@1ddb56f8 rejected from java.util.concurrent.ThreadPoolExecutor@7c152ac5[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 25]
-2021-06-25 16:42:06 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
-2021-06-25 16:42:06 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
-2021-06-25 16:42:06 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2021-06-25 16:42:06 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
-2021-06-25 16:42:06 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Closing kafka producer!
-2021-06-25 16:42:06 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
-2021-06-25 16:42:06 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
-2021-06-25 16:42:06 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2021-06-25 16:42:06 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
-2021-06-25 16:42:06 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+2021-06-26 16:47:41 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Waiting for 80000 milliseconds

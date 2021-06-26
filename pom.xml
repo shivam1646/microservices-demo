@@ -191,14 +191,6 @@
 				<version>${spring.boot.version}</version>
 			</dependency>
 
-			<!-- https://mvnrepository.com/artifact/com.github.ulisesbocchio/jasypt-spring-boot-starter -->
-			<dependency>
-				<groupId>com.github.ulisesbocchio</groupId>
-				<artifactId>jasypt-spring-boot-starter</artifactId>
-				<version>${jasypt-spring-boot-starter.version}</version>
-			</dependency>
-
-
 		</dependencies>
 	</dependencyManagement>
 
