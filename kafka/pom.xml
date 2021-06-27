@@ -11,6 +11,9 @@
 
     <artifactId>kafka</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>kafka-consumer</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
