@@ -3,6 +3,7 @@ package com.microservices.demo.elastic.query.service.api;
 import com.microservices.demo.elastic.query.service.business.ElasticQueryService;
 import com.microservices.demo.elastic.query.service.common.model.ElasticQueryServiceRequestModel;
 import com.microservices.demo.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
+import com.microservices.demo.elastic.query.service.model.ElasticQueryServiceAnalyticsResponseModel;
 import com.microservices.demo.elastic.query.service.model.ElasticQueryServiceResponseModelV2;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -103,11 +104,11 @@ public class ElasticDocumentController {
     })
     @PostMapping("/get-document-by-text")
     public @ResponseBody
-    ResponseEntity<List<ElasticQueryServiceResponseModel>>
+    ResponseEntity<ElasticQueryServiceAnalyticsResponseModel>
     getDocumentByText(@RequestBody @Valid ElasticQueryServiceRequestModel elasticQueryServiceRequestModel) {
-        List<ElasticQueryServiceResponseModel> response =
+        ElasticQueryServiceAnalyticsResponseModel response =
                 elasticQueryService.getDocumentByText(elasticQueryServiceRequestModel.getText());
-        LOG.info("Elasticsearch returned {} of documents on port {}", response.size(), port);
+        LOG.info("Elasticsearch returned {} of documents on port {}", response.getQueryResponseModels().size(), port);
         return ResponseEntity.ok(response);
     }
 

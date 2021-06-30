@@ -15,3 +15,6 @@ spring:
     user:
       name: spring_cloud_user
       password: '{cipher}04846a750cdcd757f533b2a300245c0efbde3006388f8655a4bee6426f6d690b020812601eedb05b82adcce0c4db9850'
+
+log:
+  app-name: config-server

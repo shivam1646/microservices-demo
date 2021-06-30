@@ -21,7 +21,13 @@
 		<module>elastic-query-web-client-common</module>
         <module>reactive-elastic-query-service</module>
         <module>reactive-elastic-query-web-client</module>
-    </modules>
+        <module>kafka-streams-service</module>
+        <module>elastic-query-web-client-2</module>
+        <module>analytics-service</module>
+        <module>discovery-service</module>
+        <module>gateway-service</module>
+		<module>mdc-interceptor</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -49,6 +55,14 @@
 		<spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
 		<elastic.version>7.9.1</elastic.version>
 		<springdoc-openapi-ui.version>1.5.0</springdoc-openapi-ui.version>
+		<kafka-streams.version>2.6.0</kafka-streams.version>
+		<kafka-clients.version>2.6.0</kafka-clients.version>
+		<kafka-streams-avro-serde.version>5.5.1</kafka-streams-avro-serde.version>
+		<postgresql.version>42.2.22</postgresql.version>
+		<spring-cloud-starter-circuitbreaker-reactor-resilience4j.version>1.0.4.RELEASE</spring-cloud-starter-circuitbreaker-reactor-resilience4j.version>
+		<micrometer-registry-prometheus.version>1.5.2</micrometer-registry-prometheus.version>
+		<logstash-logback-encoder.version>6.5</logstash-logback-encoder.version>
+
 	</properties>
 
 	<repositories>
@@ -57,9 +71,21 @@
 			<url>https://packages.confluent.io/maven/</url>
 		</repository>
 	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+		</dependency>
+	</dependencies>
 <!--	sub-modules can include these dependencies w/o need to download them-->
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>mdc-interceptor</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.microservices.demo</groupId>
 				<artifactId>elastic-query-web-client-common</artifactId>
@@ -201,6 +227,11 @@
 				<artifactId>spring-cloud-loadbalancer</artifactId>
 				<version>${spring-cloud.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
 			<!-- https://mvnrepository.com/artifact/io.confluent/kafka-avro-serializer -->
 			<dependency>
 				<groupId>io.confluent</groupId>
@@ -235,6 +266,12 @@
 			</dependency>
 
 			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-registry-prometheus</artifactId>
+				<version>${micrometer-registry-prometheus.version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-config-server</artifactId>
 				<version>${spring-cloud.version}</version>
@@ -242,8 +279,32 @@
 
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-config</artifactId>
 				<version>${spring-cloud.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-gateway</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
+				<version>${spring-cloud-starter-circuitbreaker-reactor-resilience4j.version}</version>
 			</dependency>
 
 			<dependency>
@@ -266,6 +327,33 @@
 				<groupId>org.elasticsearch.client</groupId>
 				<artifactId>elasticsearch-rest-high-level-client</artifactId>
 				<version>${elastic.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.confluent</groupId>
+				<artifactId>kafka-streams-avro-serde</artifactId>
+				<version>${kafka-streams-avro-serde.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-streams</artifactId>
+				<version>${kafka-streams.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-clients</artifactId>
+				<version>${kafka-clients.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.logstash.logback</groupId>
+				<artifactId>logstash-logback-encoder</artifactId>
+				<version>${logstash-logback-encoder.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
